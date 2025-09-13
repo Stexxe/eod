@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "sdl_main.h": "c",
+        "sdl.h": "c",
+        "sdl_messagebox.h": "c",
+        "sdl_metal.h": "c",
+        "__verbose_abort": "c",
+        "cstdlib": "c",
+        "new": "c",
+        "stdexcept": "c"
+    }
+}
