@@ -13,3 +13,4 @@ endif()
 add_executable(eod main.c)
 
 target_link_libraries(eod PRIVATE SDL3::SDL3)
+#target_include_directories(eod PRIVATE /home/stexe/projects/emsdk/upstream/emscripten/system/include)
