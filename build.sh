@@ -6,3 +6,5 @@ emmake make
 cd - || exit
 cp index.html build/Debug/
 cp favicon.ico build/Debug/
+
+cp build/Debug/* ./dist/
