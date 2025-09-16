@@ -41,7 +41,7 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[]) {
     int window_width, window_height;
     env_settings(&window_width, &window_height, &dpr);
 
-    if (!SDL_CreateWindowAndRenderer("Echoes of the Deep", window_width * dpr, window_height * dpr, SDL_WINDOW_FULLSCREEN, &window, &renderer)) {
+    if (!SDL_CreateWindowAndRenderer("Echoes of the Deep", window_width * dpr, window_height * dpr, 0, &window, &renderer)) {
         SDL_Log("Couldn't create window and renderer: %s", SDL_GetError());
         return SDL_APP_FAILURE;
     }
@@ -68,6 +68,9 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[]) {
 }
 
 SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event) {
+    if (event->type == SDL_EVENT_MOUSE_BUTTON_DOWN || event->type == SDL_EVENT_FINGER_DOWN) {
+        printf("MOUSE_BUTTON_DOWN\n");
+    }
     // if (event->type == SDL_EVENT_KEY_DOWN || event->type == SDL_EVENT_QUIT) {
     //     return SDL_APP_SUCCESS;
     // }
